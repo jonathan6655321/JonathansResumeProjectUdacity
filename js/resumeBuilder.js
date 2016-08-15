@@ -1,5 +1,3 @@
-// checking pull/push 
-
 var bio = {
   "name": "Jonathan Somer",
   "role": "Web developer",
