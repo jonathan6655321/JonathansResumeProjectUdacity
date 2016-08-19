@@ -24,9 +24,13 @@ h6 {
   padding: 0 5%;
 }
 
+.education-entry{
+    margin-bottom: 20px;
+}
+
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: white;
   line-height: 48px;
   display: inline;
 }
@@ -118,18 +122,18 @@ a {
 }
 
 .gray {
-  background-color: #f3f3f3;
+  background-color: #8BC34A;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #DCEDC8;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #1B5E20;
 }
 
 .flex-box {
@@ -218,4 +222,9 @@ span {
   .biopic {
     display: block;
   }
+}
+
+
+#projects, #mapDiv{
+  background-color: #DCEDC8;
 }

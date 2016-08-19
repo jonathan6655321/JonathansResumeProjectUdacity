@@ -32,9 +32,9 @@ var bio = {
 
             if (bio.skills.length > 0) {
                 $("#header").append(HTMLskillsStart);
-                for (var skillIndex in bio.skills) {
-                    $("#skills").append(HTMLskills.replace("%data%", bio.skills[skillIndex]));
-                }
+                bio.skills.forEach(function(skill){
+                  $("#skills").append(HTMLskills.replace("%data%", skill));
+                })
             }
         } // described later.
 };
@@ -44,7 +44,7 @@ bio.display();
 var education = {
     "schools": [{
         "name": "Tel Aviv Univerity",
-        "locaion": "Tel Aviv",
+        "location": "Tel Aviv",
         "degree": "B.sc",
         "majors": ["CS", "Biology"],
         "dates": "2015-2018",
@@ -103,16 +103,16 @@ var work = {
         "description": "In the wild, males seldom live longer than 10 to 14 years, as injuries sustained from continual fighting with rival males greatly reduce their longevity.[6] In captivity they can live more than 20 years. They typically inhabit savanna and grassland, although they may take to bush and forest. Lions are unusually social compared to other cats. A pride of lions consists of related females and offspring and a small number of adult males. Groups of female lions typically hunt together, preying mostly on large ungulates. Lions are apex and keystone predators, although they are also expert scavengers obtaining over 50 percent of their food by scavenging as opportunity allows. While lions do not typically hunt humans, some have. Sleeping mainly during the day, lions are active primarily at night (nocturnal), although sometimes at twilight (crepuscular).[7][8]"
     }],
     "display": function() {
-        for (var jobIndex in work.jobs) {
-            $("#workExperience").append(HTMLworkStart);
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[jobIndex].employer);
-            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[jobIndex].title);
-            $(".work-entry:last").append(formattedEmployer + formattedTitle);
-            var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[jobIndex].dates);
-            $(".work-entry:last").append(formattedWorkDates);
-            var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[jobIndex].description);
-            $(".work-entry:last").append(formattedWorkDescription);
-        }
+      work.jobs.forEach(function(val, jobIndex){
+        $("#workExperience").append(HTMLworkStart);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[jobIndex].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[jobIndex].title);
+        $(".work-entry:last").append(formattedEmployer + formattedTitle);
+        var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[jobIndex].dates);
+        $(".work-entry:last").append(formattedWorkDates);
+        var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[jobIndex].description);
+        $(".work-entry:last").append(formattedWorkDescription);
+      });
     }
 };
 
@@ -123,12 +123,12 @@ var projects = {
         "title": "Project1",
         "dates": "2000-2001",
         "description": "A description of the project",
-        "images": ["http://placehold.it/300x300", "http://placehold.it/300x300", "http://placehold.it/300x300"]
+        "images": ["https://unsplash.it/300/300/?random", "https://unsplash.it/300/300/?random", "https://unsplash.it/300/300/?random"]
     }, {
         "title": "Project2",
         "dates": "2000-2001",
         "description": "A description of the project",
-        "images": ["http://placehold.it/300x300", "http://placehold.it/300x300", "http://placehold.it/300x300"]
+        "images": ["https://unsplash.it/300/300/?random", "https://unsplash.it/300/300/?random", "https://unsplash.it/300/300/?random"]
     }],
     "display": function() {
         for (var projectIndex in projects.projects) {
